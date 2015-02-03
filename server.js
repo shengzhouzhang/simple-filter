@@ -6,9 +6,12 @@ const server = express();
 
 server.set('port', PORT);
 
-server.use(bodyParser.urlencoded({ extended: true, limit: '5mb' }));
-server.use(bodyParser.json({ limit: '5mb' }));
-server.use(bodyParser.json({ type: 'application/vnd.api+json', limit: '5mb' }));
+server.use(bodyParser.json());
+server.use(function(err, req, res, next){
+  res.status(400).json({
+    error: 'Could not decode request: JSON parsing failed'
+  });
+});
 server.use('/', require('./routers/filter'));
 
 server.listen(PORT, function () {

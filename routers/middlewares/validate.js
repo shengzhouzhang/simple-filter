@@ -4,8 +4,7 @@ const _ = require('lodash');
 var validate = function (req, res, next) {
   var data = req.body;
 
-  console.log('receiving data');
-  console.log(JSON.stringify(data));
+  console.log('receiving data', JSON.stringify(data));
 
   if(!_.isObject(data) ||
      !_.isArray(data.payload)) {
