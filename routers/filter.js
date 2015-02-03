@@ -21,6 +21,7 @@ var filter = function (req, res) {
     })
     .value();
 
+  console.log('filter success', JSON.stringify({ response: result }));
   res.status(200).json({ response: result });
 };
 
