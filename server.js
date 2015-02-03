@@ -6,8 +6,10 @@ const server = express();
 
 server.set('port', PORT);
 
-server.use(bodyParser.json());
-server.use('/filter', require('./routers/filter'));
+server.use(bodyParser.urlencoded({ extended: true, limit: '5mb' }));
+server.use(bodyParser.json({ limit: '5mb' }));
+server.use(bodyParser.json({ type: 'application/vnd.api+json', limit: '5mb' }));
+server.use('/', require('./routers/filter'));
 
 server.listen(PORT, function () {
   console.log('Server listening on ', PORT);

@@ -4,7 +4,7 @@ const data = require('./request.json');
 const expect = require('./response.json');
 
 request
-.post('http://localhost:3000/filter')
+.post('http://mi9-filter.herokuapp.com')
 .set({'Accept': 'application/json'})
 .send(data)
 .end(function(err, res){
