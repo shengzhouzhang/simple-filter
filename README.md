@@ -6,7 +6,7 @@ The service is on heroku, post http://mi9-filter.herokuapp.com
 
 first `npm install`
 
-then 'node server.js'
+then `node server.js`
 
 ### run the test
 
