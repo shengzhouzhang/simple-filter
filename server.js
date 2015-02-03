@@ -6,10 +6,9 @@ const server = express();
 
 server.set('port', PORT);
 
-// routers
+server.use(bodyParser.json());
 server.use('/filter', require('./routers/filter'));
 
-// server
 server.listen(PORT, function () {
   console.log('Server listening on ', PORT);
 });
